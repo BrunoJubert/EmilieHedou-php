@@ -31,39 +31,49 @@
 
     </div>
     
-    <div id="admin-login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-login-modal">&times;</span>
-            <form id="admin-login-form" action="/login" method="POST">
-                <h2>Connexion admin</h2>
-                <label>Email :</label>
-                <input type="text" name="username" required>
-                <br>
-                <label>Mot de passe :</label>
-                <input type="password" name="password" required>
-                <br>
-                <button type="submit">Se connecter</button>
-                <div id="login-error" style="color: red; margin-top: 10px;">
-                    <% if (typeof error !=='undefined' && error) { %>
-                        <%= error %>
-                            <% } %>
-                </div>
-            </form>
-        </div>
+    <div id="admin-login-modal" class="modal<?php if (!empty($showLoginModal)) echo ' show'; ?>">
+    <div class="modal-content">
+        <span class="close" id="close-login-modal">&times;</span>
+        <form id="admin-login-form" action="/EmilieHedou-php/views/pages/login.php" method="POST">
+            <h2>Connexion admin</h2>
+            <label>Email :</label>
+            <input type="text" name="username" required>
+            <br>
+            <label>Mot de passe :</label>
+            <input type="password" name="password" required>
+            <br>
+            <button type="submit">Se connecter</button>
+            <div id="login-error" style="color: red; margin-top: 10px;">
+                <?php if (!empty($error)) echo htmlspecialchars($error); ?>
+            </div>
+        </form>
     </div>
+</div>
+
       
       
 
 </footer>
 
 <script>
-    <% if (typeof showLoginModal !== "undefined" && showLoginModal) { %>
-        document.addEventListener("DOMContentLoaded", function () {
-            const modal = document.getElementById("admin-login-modal");
-            if (modal) modal.classList.add("show");
-        });
-    <% } %>
+document.addEventListener("DOMContentLoaded", function () {
+    // Gestion fermeture modale
+    const modal = document.getElementById("admin-login-modal");
+    const closeBtn = document.getElementById("close-login-modal");
+    if (closeBtn && modal) {
+        closeBtn.onclick = function () {
+            modal.classList.remove("show");
+        };
+    }
+    // Optionnel : fermer la modale si on clique en dehors
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.classList.remove("show");
+        }
+    };
+});
 </script>
+
   
 
 

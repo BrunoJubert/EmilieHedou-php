@@ -22,17 +22,51 @@
                 </div>
                 <button class="sidebar-toggle" id="sidebarToggle" aria-label="Réduire/ouvrir le menu">
                     <i class="fas fa-chevron-left"></i>
-                </button>      </div>
+                </button>
+            </div>
             <ul class="nav-links" id="navLinks">
-                        <li><a href="/dashboard"><i class="fas fa-gauge"></i><span class="nav-label">Dashboard</span></a></li>
-                        <li><a href="/"><i class="fas fa-home"></i><span class="nav-label">Accueil</span></a></li>
-                        <li><a href="/#biographie"><i class="fas fa-user"></i><span class="nav-label">Biographie</span></a>
-                        </li>
-                        <li><a href="/concerts"><i class="fas fa-music"></i><span class="nav-label">Concerts</span></a></li>
-                        <li><a href="/#projets"><i class="fas fa-star"></i><span class="nav-label">Projets</span></a></li>
-                        <li><a href="/#presse"><i class="fas fa-newspaper"></i><span class="nav-label">Dossier de presse</span></a></li>
-                        <li><a href="/#contact"><i class="fas fa-envelope"></i><span class="nav-label">Contact</span></a>
-                        </li>
+                <li>
+                    <a href="/EmilieHedou-php/dashboard">
+                        <i class="fas fa-gauge"></i>
+                        <span class="nav-label">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/">
+                        <i class="fas fa-home"></i>
+                        <span class="nav-label">Accueil</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/#biographie">
+                        <i class="fas fa-user"></i>
+                        <span class="nav-label">Biographie</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/concerts">
+                        <i class="fas fa-music"></i>
+                        <span class="nav-label">Concerts</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/#projets">
+                        <i class="fas fa-star"></i>
+                        <span class="nav-label">Projets</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/#presse">
+                        <i class="fas fa-newspaper"></i>
+                        <span class="nav-label">Dossier de presse</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/EmilieHedou-php/#contact">
+                        <i class="fas fa-envelope"></i>
+                        <span class="nav-label">Contact</span>
+                    </a>
+                </li>
             </ul>
             <button class="burger" id="burgerBtn" aria-label="Ouvrir le menu">
                 <span></span>
@@ -41,4 +75,3 @@
             </button>
         </nav>
     </header>
-    

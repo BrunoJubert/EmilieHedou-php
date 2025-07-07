@@ -42,6 +42,14 @@ if ($result && $result->num_rows > 0) {
 }
 ?>
 
+<?php
+$showLoginModal = false;
+if (isset($_GET['login'])) {
+    $showLoginModal = true;
+}
+?>
+
+
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
 
 <div class="admin-dashboard">

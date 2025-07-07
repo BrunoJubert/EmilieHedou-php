@@ -1,0 +1,18 @@
+RewriteEngine On
+RewriteBase /EmilieHedou-php/
+
+# Redirige la racine vers la home
+DirectoryIndex views/pages/home.php
+
+# URLs propres pour les pages principales
+RewriteRule ^concerts$           views/pages/concerts.php [L,QSA]
+RewriteRule ^projets$            views/pages/projets.php [L,QSA]
+RewriteRule ^presse$             views/pages/presse.php [L,QSA]
+RewriteRule ^confidentialite$    views/pages/confidentialite.php [L,QSA]
+RewriteRule ^dashboard$          views/pages/dashboard.php [L,QSA]
+
+# URL propre pour ouvrir la modale admin
+RewriteRule ^login$              views/pages/home.php?login=1 [L,QSA]
+
+# (optionnel) Pour d'autres pages, ajoute une règle similaire
+# RewriteRule ^contact$           views/pages/contact.php [L,QSA]
