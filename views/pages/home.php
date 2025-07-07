@@ -34,48 +34,6 @@ $stmt->close();
         </div>
     </section>
 
-    <!-- Aperçu dynamique des 2 prochains concerts -->
-    <section id="concerts-apercu" class="hero section-appear">
-        <h1>Prochains concerts</h1>
-        <?php if (empty($concerts_apercu)) : ?>
-            <p>Aucun concert à venir pour le moment.</p>
-        <?php else : ?>
-            <div class="concert-cards-grid">
-                <?php foreach ($concerts_apercu as $concert) : ?>
-                    <div class="concert-card">
-                        <?php if (!empty($concert['image_url'])) : ?>
-                            <div class="concert-card-img-wrapper">
-                                <img src="/EmilieHedou-php/public/assets/<?= htmlspecialchars($concert['image_url']) ?>" alt="Affiche du concert" class="concert-img">
-                            </div>
-                        <?php endif; ?>
-                        <div class="concert-card-content">
-                            <div class="concert-info">
-                                <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
-                                <span class="concert-date"><?= date('d/m/Y', strtotime($concert['concert_date'])) ?></span>
-                                <?php if (!empty($concert['concert_time'])) : ?>
-                                    <span class="concert-time">à <?= substr($concert['concert_time'], 0, 5) ?></span>
-                                <?php endif; ?>
-                            </div>
-                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist_name']) ?></h3>
-                            <?php if (!empty($concert['description'])) : ?>
-                                <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
-                            <?php endif; ?>
-                            <?php if (!empty($concert['ticket_price']) && $concert['ticket_price'] > 0) : ?>
-                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['ticket_price'], 2) ?> €</p>
-                            <?php endif; ?>
-                            <?php if (!empty($concert['phone'])) : ?>
-                                <p class="concert-phone"><strong>Réservation :</strong> <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"><?= htmlspecialchars($concert['phone']) ?></a></p>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <div style="margin-top: 1em;">
-                <a href="/EmilieHedou-php/concerts" class="see-more">Voir tous les concerts</a>
-            </div>
-        <?php endif; ?>
-    </section>
-    <!-- Fin de l’aperçu dynamique -->
 
     <section id="biographie" class="hero section-appear">
         <h1>Biographie</h1>
@@ -141,11 +99,50 @@ $stmt->close();
     </section>
 
     <section id="concerts" class="hero section-appear">
-        <h1>Concerts</h1>
-        <p>Bientôt en concert près de chez vous</p>
-        <img class="mimichant" src="/EmilieHedou-php/public/assets/mimi1.jpg" alt="Concerts Emilie" />
-        <a href="/EmilieHedou-php/concerts" class="see-more">Voir les dates</a>
-    </section>
+    <h1>Concerts</h1>
+    <p>Bientôt en concert près de chez vous</p>
+    <img class="mimichant" src="/EmilieHedou-php/public/assets/mimi1.jpg" alt="Concerts Emilie" />
+
+    <!-- Aperçu dynamique des 2 prochains concerts -->
+    <?php if (empty($concerts_apercu)) : ?>
+        <p style="margin-top:1em;">Aucun concert à venir pour le moment.</p>
+    <?php else : ?>
+        <div class="concert-cards-grid" style="margin-top:1em;">
+            <?php foreach ($concerts_apercu as $concert) : ?>
+                <div class="concert-card">
+                    <?php if (!empty($concert['image_url'])) : ?>
+                        <div class="concert-card-img-wrapper">
+                            <img src="/EmilieHedou-php/public/assets/<?= htmlspecialchars($concert['image_url']) ?>" alt="Affiche du concert" class="concert-img">
+                        </div>
+                    <?php endif; ?>
+                    <div class="concert-card-content">
+                        <div class="concert-info">
+                            <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
+                            <span class="concert-date"><?= date('d/m/Y', strtotime($concert['concert_date'])) ?></span>
+                            <?php if (!empty($concert['concert_time'])) : ?>
+                                <span class="concert-time">à <?= substr($concert['concert_time'], 0, 5) ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <h3 class="concert-artist"><?= htmlspecialchars($concert['artist_name']) ?></h3>
+                        <?php if (!empty($concert['description'])) : ?>
+                            <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($concert['ticket_price']) && $concert['ticket_price'] > 0) : ?>
+                            <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['ticket_price'], 2) ?> €</p>
+                        <?php endif; ?>
+                        <?php if (!empty($concert['phone'])) : ?>
+                            <p class="concert-phone"><strong>Réservation :</strong> <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"><?= htmlspecialchars($concert['phone']) ?></a></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <!-- Fin de l’aperçu dynamique -->
+
+    <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;">Voir les dates</a>
+</section>
+
 
     <section id="projets" class="hero section-appear">
         <h1>Projets</h1>
