@@ -146,7 +146,7 @@ if (isset($_GET['login'])) {
         <?php endif; ?>
         <!-- Fin de l’aperçu dynamique -->
 
-        <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;">Voir les dates</a>
+        <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
         </section>
 
     <section id="projets" class="hero section-appear">
@@ -199,7 +199,7 @@ if (isset($_GET['login'])) {
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
             </div>
-            <button type="submit" class="submit">Envoyer</button>
+            <button type="submit" class="submit"><strong>Envoyer</strong></button>
         </form>
     </section>
 </main>

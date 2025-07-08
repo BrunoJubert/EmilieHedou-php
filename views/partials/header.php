@@ -67,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li>
                     <a href="/EmilieHedou-php/#presse">
                         <i class="fas fa-newspaper"></i>
-                        <span class="nav-label">Dossier de presse</span>
+                        <span class="nav-label">Presse</span>
                     </a>
                 </li>
                 <li>
