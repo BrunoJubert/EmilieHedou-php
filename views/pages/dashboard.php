@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist'])) {
     $price = $_POST['price'] ?? 0;
     $description = $_POST['description'] ?? '';
 
-    $stmt = $conn->prepare("INSERT INTO concerts (artist_name, image_url, venue, concert_date, concert_time, phone, ticket_price, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO concerts (artist, image_url, venue, date, time, phone, price, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssds", $artist, $image_url, $venue, $date, $time, $phone, $price, $description);
     $stmt->execute();
     $stmt->close();

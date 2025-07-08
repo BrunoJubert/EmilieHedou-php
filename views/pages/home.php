@@ -105,49 +105,60 @@ if (isset($_GET['login'])) {
     </section>
 
     <section id="concerts" class="hero section-appear">
-        <h1>Concerts</h1>
-        <p>Bientôt en concert près de chez vous</p>
-        <img class="mimichant" src="/EmilieHedou-php/public/assets/mimi1.jpg" alt="Concerts Emilie" />
+    <h1>Concerts</h1>
+    <p>Bientôt en concert près de chez vous</p>
+    <img class="mimichant" src="/EmilieHedou-php/public/assets/mimi1.jpg" alt="Concerts Emilie" />
 
-        <!-- Aperçu dynamique des 2 prochains concerts -->
-        <?php if (empty($concerts_apercu)) : ?>
-            <p style="margin-top:1em;">Aucun concert à venir pour le moment.</p>
-        <?php else : ?>
-            <div class="concert-cards-grid" style="margin-top:1em;">
-                <?php foreach ($concerts_apercu as $concert) : ?>
-                    <div class="concert-card">
-                        <?php if (!empty($concert['image_url'])) : ?>
-                            <div class="concert-card-img-wrapper">
-                                <img src="/EmilieHedou-php/public/assets/<?= htmlspecialchars($concert['image_url']) ?>" alt="Affiche du concert" class="concert-img">
-                            </div>
-                        <?php endif; ?>
-                        <div class="concert-card-content">
-                            <div class="concert-info">
-                                <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
-                                <span class="concert-date"><?= date('d/m/Y', strtotime($concert['date'])) ?></span>
-                                <?php if (!empty($concert['time'])) : ?>
-                                    <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
-                                <?php endif; ?>
-                            </div>
-                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
-                            <?php if (!empty($concert['description'])) : ?>
-                                <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
-                            <?php endif; ?>
-                            <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
-                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
-                            <?php endif; ?>
-                            <?php if (!empty($concert['phone'])) : ?>
-                                <p class="concert-phone"><strong>Réservation :</strong> <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"><?= htmlspecialchars($concert['phone']) ?></a></p>
+    <?php if (empty($concerts_apercu)) : ?>
+        <p style="margin-top:1em;">Aucun concert à venir pour le moment.</p>
+    <?php else : ?>
+        <div class="concert-cards-grid">
+            <?php foreach ($concerts_apercu as $concert) : ?>
+                <?php
+                    $bgImage = '';
+                    if (!empty($concert['image_url'])) {
+                        $src = htmlspecialchars($concert['image_url']);
+                        if (strpos($src, 'http') !== 0 && strpos($src, '/') !== 0) {
+                            $src = '/EmilieHedou-php/public/assets/' . $src;
+                        }
+                        $bgImage = "background-image: url('{$src}');";
+                    }
+                ?>
+                <div class="concert-card" style="<?= $bgImage ?>">
+                    <div class="concert-card-content">
+                        <div class="concert-info">
+                            <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
+                            <span class="concert-date"><?= date('d/m/Y', strtotime($concert['date'])) ?></span>
+                            <?php if (!empty($concert['time'])) : ?>
+                                <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
                             <?php endif; ?>
                         </div>
+                        <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
+                        <?php if (!empty($concert['description'])) : ?>
+                            <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
+                        <?php endif; ?>
+                        <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
+                            <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
+                        <?php endif; ?>
+                        <?php if (!empty($concert['phone'])) : ?>
+                        <div class="concert-phone">
+                            <span class="phone-number"><?= htmlspecialchars($concert['phone']) ?></span>
+                            <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"
+                               class="btn-call"
+                               title="Appeler pour réserver">
+                                Téléphoner
+                            </a>
+                        </div>
+                        <?php endif; ?>
                     </div>
-                <?php endforeach; ?>
-            </div>
-        <?php endif; ?>
-        <!-- Fin de l’aperçu dynamique -->
+                </div>
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+    <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
+</section>
 
-        <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
-        </section>
+
 
     <section id="projets" class="hero section-appear">
         <h1>Projets</h1>
