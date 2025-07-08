@@ -13,8 +13,7 @@ $host     = $_ENV['MYSQL_HOST'];
 $user     = $_ENV['MYSQL_USER'];
 $password = $_ENV['MYSQL_PASSWORD'];
 $dbname   = $_ENV['MYSQL_DATABASE'];
-$port     = $_ENV['MYSQL_PORT'];
-
+$port = (int) $_ENV['MYSQL_PORT'];
 // Connexion à MySQL
 $conn = new mysqli($host, $user, $password, $dbname, $port);
 

@@ -14,5 +14,9 @@ RewriteRule ^dashboard$          views/pages/dashboard.php [L,QSA]
 # URL propre pour ouvrir la modale admin
 RewriteRule ^login$              views/pages/home.php?login=1 [L,QSA]
 
+# URL pour la déconnexion
+RewriteRule ^logout$ views/pages/logout.php [L,QSA]
+
+
 # (optionnel) Pour d'autres pages, ajoute une règle similaire
 # RewriteRule ^contact$           views/pages/contact.php [L,QSA]

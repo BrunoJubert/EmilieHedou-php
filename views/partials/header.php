@@ -1,3 +1,10 @@
+<?php
+// Toujours démarrer la session AVANT tout HTML
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,12 +32,14 @@
                 </button>
             </div>
             <ul class="nav-links" id="navLinks">
+            <?php if (!empty($_SESSION['user']['id'])): ?>
                 <li>
                     <a href="/EmilieHedou-php/dashboard">
                         <i class="fas fa-gauge"></i>
                         <span class="nav-label">Dashboard</span>
                     </a>
                 </li>
+                <?php endif; ?>
                 <li>
                     <a href="/EmilieHedou-php/">
                         <i class="fas fa-home"></i>

@@ -1,4 +1,15 @@
 <?php
+session_start();
+// Vérifie si l'utilisateur est connecté et a le bon rôle
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+    header('Location: /EmilieHedou-php/login');
+    exit;
+}
+?>
+
+
+
+<?php
 // Connexion à la base de données
 include_once __DIR__ . '/../../includes/db.php';
 
@@ -33,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
 
 // Récupération des concerts
 $concerts = [];
-$sql = "SELECT * FROM concerts ORDER BY concert_date ASC";
+$sql = "SELECT * FROM concerts ORDER BY date ASC";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -53,10 +64,11 @@ if (isset($_GET['login'])) {
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
 
 <div class="admin-dashboard">
-    <h1>Bienvenue sur le dashboard</h1>
+    <h1>Bienvenue <?= htmlspecialchars($_SESSION['user']['firstname']) ?> </h1>
     <p>Ceci est une page protégée.</p>
-    <a href="/logout" class="logout-btn">Se déconnecter</a>
+    <a href="/EmilieHedou-php/logout" class="logout-btn">Se déconnecter</a>
 </div>
+
 
 <!-- Bouton pour afficher/masquer tout le bloc concerts -->
 <button type="button" class="dashboard-toggle" onclick="toggleConcertsSection()" id="concerts-toggle-btn"
@@ -119,9 +131,9 @@ if (isset($_GET['login'])) {
                     <div class="concert-admin-card">
                         <div class="concert-card-header">
                             <span class="concert-date">
-                                <?= date('d/m/Y', strtotime($concert['concert_date'])) ?>
-                                <?php if (!empty($concert['concert_time'])) : ?>
-                                    à <?= substr($concert['concert_time'], 0, 5) ?>
+                                <?= date('d/m/Y', strtotime($concert['date'])) ?>
+                                <?php if (!empty($concert['time'])) : ?>
+                                    à <?= substr($concert['time'], 0, 5) ?>
                                 <?php endif; ?>
                             </span>
                             <span class="concert-venue">
@@ -130,7 +142,7 @@ if (isset($_GET['login'])) {
                         </div>
                         <div class="concert-admin-info">
                             <h3 class="concert-artist">
-                                <?= htmlspecialchars($concert['artist_name']) ?>
+                                <?= htmlspecialchars($concert['artist']) ?>
                             </h3>
                             <?php if (!empty($concert['description'])) : ?>
                                 <p class="concert-description">

@@ -4,7 +4,7 @@ include_once __DIR__ . '/../../includes/db.php';
 
 // 2. Récupération des concerts
 $concerts = [];
-$sql = "SELECT * FROM concerts ORDER BY concert_date ASC";
+$sql = "SELECT * FROM concerts ORDER BY date ASC";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
@@ -42,20 +42,20 @@ if (isset($_GET['login'])) {
                             <div class="concert-info">
                                 <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
                                 <span class="concert-date">
-                                    <?= date('d/m/Y', strtotime($concert['concert_date'])) ?>
+                                    <?= date('d/m/Y', strtotime($concert['date'])) ?>
                                 </span>
-                                <?php if (!empty($concert['concert_time'])) : ?>
+                                <?php if (!empty($concert['time'])) : ?>
                                     <span class="concert-time">
-                                        à <?= substr($concert['concert_time'], 0, 5) ?>
+                                        à <?= substr($concert['time'], 0, 5) ?>
                                     </span>
                                 <?php endif; ?>
                             </div>
-                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist_name']) ?></h3>
+                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
                             <?php if (!empty($concert['description'])) : ?>
                                 <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
                             <?php endif; ?>
-                            <?php if (!empty($concert['ticket_price']) && $concert['ticket_price'] > 0) : ?>
-                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['ticket_price'], 2) ?> €</p>
+                            <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
+                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
                             <?php endif; ?>
                             <?php if (!empty($concert['phone'])) : ?>
                                 <p class="concert-phone"><strong>Réservation :</strong> <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"><?= htmlspecialchars($concert['phone']) ?></a></p>

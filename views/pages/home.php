@@ -5,7 +5,7 @@ include_once __DIR__ . '/../../includes/db.php';
 // Récupérer les 2 prochains concerts à venir
 $concerts_apercu = [];
 $today = date('Y-m-d');
-$sql = "SELECT * FROM concerts WHERE concert_date >= ? ORDER BY concert_date ASC LIMIT 2";
+$sql = "SELECT * FROM concerts WHERE date >= ? ORDER BY date ASC LIMIT 2";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $today);
 $stmt->execute();
@@ -124,17 +124,17 @@ if (isset($_GET['login'])) {
                         <div class="concert-card-content">
                             <div class="concert-info">
                                 <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
-                                <span class="concert-date"><?= date('d/m/Y', strtotime($concert['concert_date'])) ?></span>
-                                <?php if (!empty($concert['concert_time'])) : ?>
-                                    <span class="concert-time">à <?= substr($concert['concert_time'], 0, 5) ?></span>
+                                <span class="concert-date"><?= date('d/m/Y', strtotime($concert['date'])) ?></span>
+                                <?php if (!empty($concert['time'])) : ?>
+                                    <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
                                 <?php endif; ?>
                             </div>
-                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist_name']) ?></h3>
+                            <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
                             <?php if (!empty($concert['description'])) : ?>
                                 <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
                             <?php endif; ?>
-                            <?php if (!empty($concert['ticket_price']) && $concert['ticket_price'] > 0) : ?>
-                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['ticket_price'], 2) ?> €</p>
+                            <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
+                                <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
                             <?php endif; ?>
                             <?php if (!empty($concert['phone'])) : ?>
                                 <p class="concert-phone"><strong>Réservation :</strong> <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"><?= htmlspecialchars($concert['phone']) ?></a></p>
@@ -146,8 +146,8 @@ if (isset($_GET['login'])) {
         <?php endif; ?>
         <!-- Fin de l’aperçu dynamique -->
 
-        <a href="/concerts" class="see-more" style="margin-top:2em;display:inline-block;">Voir les dates</a>
-    </section>
+        <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;">Voir les dates</a>
+        </section>
 
     <section id="projets" class="hero section-appear">
         <h1>Projets</h1>
