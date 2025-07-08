@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
 </head>
 
 <body>
-    <header class="musician-header sidebar-open" id="sidebar">
+    <header class="musician-header sidebar-closed" id="sidebar">
         <nav class="navbar">
             <div class="sidebar-header">
                 <div class="logo">

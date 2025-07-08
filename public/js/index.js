@@ -1,16 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- MENU BURGER ---
+  // --- SIDEBAR DESKTOP (chevron uniquement) ---
+  const sidebar = document.getElementById("sidebar");
+  const sidebarToggle = document.getElementById("sidebarToggle");
+
+  if (sidebar && sidebarToggle) {
+    sidebarToggle.addEventListener("click", () => {
+      sidebar.classList.toggle("sidebar-closed");
+      sidebar.classList.toggle("sidebar-open");
+    });
+  }
+
+  // --- MENU BURGER (MOBILE) ---
   const burger = document.getElementById("burgerBtn");
   const menu = document.getElementById("navLinks");
 
+  function isMobile() {
+    return window.innerWidth < 900;
+  }
+
   if (burger && menu) {
     burger.addEventListener("click", (e) => {
+      if (!isMobile()) return;
       e.stopPropagation();
       menu.classList.toggle("active");
       burger.classList.toggle("active");
     });
 
     document.addEventListener("click", (e) => {
+      if (!isMobile()) return;
       if (!menu.contains(e.target) && !burger.contains(e.target)) {
         menu.classList.remove("active");
         burger.classList.remove("active");
@@ -18,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     window.addEventListener("scroll", () => {
+      if (!isMobile()) return;
       menu.classList.remove("active");
       burger.classList.remove("active");
     });
@@ -63,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // --- HEADER SCROLL ---
+  // --- HEADER SCROLL (uniquement pour mobile) ---
   const header = document.querySelector(".musician-header");
   let lastScrollY = window.scrollY;
 
@@ -105,13 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
       threshold: 0.2,
     }
   );
-
   sections.forEach((section) => observer.observe(section));
-});
 
-  // --- CONNEXION ---
-
-document.addEventListener("DOMContentLoaded", function () {
+  // --- MODALE DE CONNEXION ADMIN ---
   const loginLink = document.getElementById("admin-login-link");
   const modal = document.getElementById("admin-login-modal");
   const closeBtn = document.getElementById("close-login-modal");
@@ -119,11 +133,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (loginLink && modal && closeBtn) {
     loginLink.addEventListener("click", function (e) {
       e.preventDefault();
-      modal.classList.add("show"); 
+      modal.classList.add("show");
     });
 
     closeBtn.addEventListener("click", function () {
-      modal.classList.remove("show"); 
+      modal.classList.remove("show");
     });
 
     window.addEventListener("click", function (event) {
@@ -138,42 +152,48 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-});
 
-document.addEventListener("DOMContentLoaded", () => {
+  // --- ERREUR LOGIN (disparaît après 5s) ---
   const errorDiv = document.getElementById("login-error");
   if (errorDiv && errorDiv.textContent.trim() !== "") {
     setTimeout(() => {
       errorDiv.textContent = "";
-    }, 5000); 
+    }, 5000);
+  }
+
+  // --- FLIP CARD ---
+  document.querySelectorAll(".flip-card").forEach((card) => {
+    card.addEventListener("click", function () {
+      this.classList.toggle("flipped");
+    });
+  });
+
+  // --- DETAILS BIO ---
+  const summary = document.querySelector(".see-more-dropdown > summary");
+  const details = document.querySelector(".see-more-dropdown");
+  const target = document.getElementById("bio-details");
+
+  if (summary && details && target) {
+    summary.addEventListener("click", function (e) {
+      setTimeout(() => {
+        if (details.open) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 50);
+    });
   }
 });
 
-function toggleConcertsSection() {
-  const section = document.getElementById("concerts-section");
-  section.style.display = section.style.display === "block" ? "none" : "block";
-}
-
-
-function toggleEditForm(id, closeOnly) {
-  const form = document.getElementById("editForm-" + id);
-  if (closeOnly) {
-    form.style.display = "none";
-  } else {
-    form.style.display = form.style.display === "block" ? "none" : "block";
-  }
-}
-
-function toggleConcertsSection() {
+// --- FONCTIONS GLOBALES (hors DOMContentLoaded) ---
+window.toggleConcertsSection = function () {
   const section = document.getElementById("concerts-section");
   const btn = document.getElementById("concerts-toggle-btn");
   const arrow = document.getElementById("concerts-arrow");
   const isOpen = section.style.display === "block";
   section.style.display = isOpen ? "none" : "block";
-  btn.setAttribute("aria-expanded", !isOpen);
-  arrow.classList.toggle("open", !isOpen);
-}
-
+  if (btn) btn.setAttribute("aria-expanded", !isOpen);
+  if (arrow) arrow.classList.toggle("open", !isOpen);
+};
 
 window.toggleEditForm = function (id, cancel = false) {
   document
@@ -186,47 +206,3 @@ window.toggleEditForm = function (id, cancel = false) {
     }
   }
 };
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".flip-card").forEach((card) => {
-    card.addEventListener("click", function () {
-      this.classList.toggle("flipped");
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const summary = document.querySelector(".see-more-dropdown > summary");
-  const details = document.querySelector(".see-more-dropdown");
-  const target = document.getElementById("bio-details");
-
-  if (summary && details && target) {
-    summary.addEventListener("click", function (e) {
-      // On laisse le comportement natif ouvrir le details
-      setTimeout(() => {
-        if (details.open) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-      }, 50); // petit délai pour laisser le <details> s’ouvrir
-    });
-  }
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar = document.getElementById("sidebar");
-  const sidebarToggle = document.getElementById("sidebarToggle");
-
-  if (sidebar && sidebarToggle) {
-    sidebarToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("sidebar-closed");
-      sidebar.classList.toggle("sidebar-open");
-    });
-  }
-});
-
-
-
-
-
-

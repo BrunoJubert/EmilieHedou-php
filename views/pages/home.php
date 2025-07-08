@@ -35,8 +35,8 @@ if (isset($_GET['login'])) {
             <h1>Bienvenue</h1>
             <p>Découvrez l'univers musical d'<strong>Emilie Hedou</strong></p>
             <div class="landing-buttons">
-                <a href="/projets" class="see-more">Écouter un extrait</a>
-                <a href="/concerts" class="see-more">Voir les concerts</a>
+                <a href="/EmilieHedou-php/#projets" class="see-more">Écouter un extrait</a>
+                <a href="/EmilieHedou-php/concerts" class="see-more">Voir les concerts</a>
             </div>
         </div>
     </section>
@@ -153,7 +153,13 @@ if (isset($_GET['login'])) {
         <h1>Projets</h1>
         <p>Projet en cours et à venir</p>
         <img class="mimiprojet" src="/EmilieHedou-php/public/assets/mimi-projet.png" alt="Projets Emilie" />
-        <a href="/projets" class="see-more">Explorer</a>
+        <details class="see-more-dropdown">   
+            <summary class="see-more">
+                Explorer
+                <span class="arrow" aria-hidden="true"></span>
+            </summary> 
+
+        </details>   
     </section>
 
     <section id="presse" class="hero section-appear">
@@ -163,7 +169,13 @@ if (isset($_GET['login'])) {
             et ses concerts. Ce dossier est destiné aux journalistes, blogueurs et professionnels de l'industrie musicale.
         </p>
         <img class="mimibw" src="/EmilieHedou-php/public/assets/mimipresse.jpg" alt="Dossier de presse Emilie" />
-        <a href="/presse" class="see-more">Découvrir</a>
+        <details class="see-more-dropdown">   
+            <summary class="see-more">
+                Découvrir
+                <span class="arrow" aria-hidden="true"></span>
+            </summary> 
+             
+        </details>    
     </section>
 
     <section id="contact" class="contact-section hero section-appear">
