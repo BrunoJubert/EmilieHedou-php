@@ -1,7 +1,13 @@
 RewriteEngine On
-RewriteBase /EmilieHedou-php/
 
-# Redirige la racine vers la home
+# Si tu es dans un sous-dossier sous XAMPP, adapte RewriteBase :
+# Pour Docker à la racine :
+RewriteBase /
+
+# Pour XAMPP dans htdocs/EmilieHedou-php :
+# RewriteBase /EmilieHedou-php/
+
+# Page d'accueil (home)
 DirectoryIndex views/pages/home.php
 
 # URLs propres pour les pages principales
@@ -15,8 +21,13 @@ RewriteRule ^dashboard$          views/pages/dashboard.php [L,QSA]
 RewriteRule ^login$              views/pages/home.php?login=1 [L,QSA]
 
 # URL pour la déconnexion
-RewriteRule ^logout$ views/pages/logout.php [L,QSA]
-
+RewriteRule ^logout$             views/pages/logout.php [L,QSA]
 
 # (optionnel) Pour d'autres pages, ajoute une règle similaire
 # RewriteRule ^contact$           views/pages/contact.php [L,QSA]
+
+# Si tu veux que tout ce qui n'est pas un fichier/dossier existant
+# soit redirigé vers home.php (routing global SPA style) :
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ views/pages/home.php [L,QSA]

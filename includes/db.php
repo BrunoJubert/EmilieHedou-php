@@ -2,7 +2,6 @@
 // Charge l'autoloader de Composer (nécessaire pour Dotenv)
 // __DIR__ = C:\xampp\htdocs\EmilieHedou-php\includes
 require_once __DIR__ . '/../vendor/autoload.php';
-
 // Charge les variables d'environnement du fichier .env
 // Le .env est à la racine : C:\xampp\htdocs\EmilieHedou-php\.env
 $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
@@ -16,11 +15,9 @@ $dbname   = $_ENV['MYSQL_DATABASE'];
 $port = (int) $_ENV['MYSQL_PORT'];
 // Connexion à MySQL
 $conn = new mysqli($host, $user, $password, $dbname, $port);
-
 // Vérifie la connexion
 if ($conn->connect_error) {
     die("Erreur de connexion : " . $conn->connect_error);
 }
-
 // $conn est prêt à être utilisé partout où tu inclus ce fichier
 ?>

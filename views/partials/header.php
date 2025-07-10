@@ -1,10 +1,3 @@
-<?php
-// Toujours démarrer la session AVANT tout HTML
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -15,8 +8,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <script src="/EmilieHedou-php/public/js/coockieManager.js"></script>
-    <link rel="stylesheet" href="/EmilieHedou-php/public/styles/styles.css" />
+    <script src="/public/js/coockieManager.js"></script>
+    <link rel="stylesheet" href="/public/styles/styles.css" />
 </head>
 
 <body>
@@ -34,44 +27,44 @@ if (session_status() === PHP_SESSION_NONE) {
             <ul class="nav-links" id="navLinks">
             <?php if (!empty($_SESSION['user']['id'])): ?>
                 <li>
-                    <a href="/EmilieHedou-php/dashboard">
+                    <a href="/dashboard">
                         <i class="fas fa-gauge"></i>
                         <span class="nav-label">Dashboard</span>
                     </a>
                 </li>
-                <?php endif; ?>
+            <?php endif; ?>
                 <li>
-                    <a href="/EmilieHedou-php/">
+                    <a href="/">
                         <i class="fas fa-home"></i>
                         <span class="nav-label">Accueil</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/EmilieHedou-php/#biographie">
+                    <a href="/#biographie">
                         <i class="fas fa-user"></i>
                         <span class="nav-label">Biographie</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/EmilieHedou-php/concerts">
+                    <a href="/concerts">
                         <i class="fas fa-music"></i>
                         <span class="nav-label">Concerts</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/EmilieHedou-php/#projets">
+                    <a href="/#projets">
                         <i class="fas fa-star"></i>
                         <span class="nav-label">Projets</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/EmilieHedou-php/#presse">
+                    <a href="/#presse">
                         <i class="fas fa-newspaper"></i>
                         <span class="nav-label">Presse</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/EmilieHedou-php/#contact">
+                    <a href="/#contact">
                         <i class="fas fa-envelope"></i>
                         <span class="nav-label">Contact</span>
                     </a>

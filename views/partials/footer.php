@@ -34,7 +34,7 @@
     <div id="admin-login-modal" class="modal<?php if (!empty($showLoginModal)) echo ' show'; ?>">
     <div class="modal-content">
         <span class="close" id="close-login-modal">&times;</span>
-        <form id="admin-login-form" action="/EmilieHedou-php/views/pages/login.php" method="POST">
+        <form id="admin-login-form" action="/views/pages/login.php" method="POST">
             <h2>Connexion admin</h2>
             <label>Email :</label>
             <input type="text" name="username" required>
@@ -49,12 +49,7 @@
         </form>
     </div>
 </div>
-
-      
-      
-
 </footer>
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // Gestion fermeture modale
@@ -73,11 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 </script>
-
-  
-
-
-<script src="/EmilieHedou-php/public/js/index.js"></script>
+<script src="/public/js/index.js"></script>
 </body>
 
 </html>

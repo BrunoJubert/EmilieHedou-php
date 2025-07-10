@@ -1,4 +1,5 @@
 <?php
+session_start();
 // 1. Connexion à la base de données
 include_once __DIR__ . '/../../includes/db.php';
 
@@ -37,7 +38,7 @@ if (isset($_GET['login'])) {
                         if (!empty($concert['image_url'])) {
                             $src = htmlspecialchars($concert['image_url']);
                             if (strpos($src, 'http') !== 0 && strpos($src, '/') !== 0) {
-                                $src = '/EmilieHedou-php/public/assets/' . $src;
+                                $src = '/public/assets/' . $src;
                             }
                             $bgImage = "background-image: url('{$src}');";
                         }

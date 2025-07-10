@@ -27,15 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'role' => $user['role'] // adapte selon ta structure
         ];
         // Rediriger vers le dashboard
-        header('Location: /EmilieHedou-php/dashboard');
+        header('Location: /dashboard');
         exit;
     } else {
         // Rediriger vers la home avec la modale ouverte et un message d’erreur
-        header('Location: /EmilieHedou-php/?login=1&error=Identifiants+incorrects');
+        header('Location: /?login=1&error=Identifiants+incorrects');
         exit;
     }
 }
 
 // Si on arrive ici sans POST, on redirige vers la home
-header('Location: /EmilieHedou-php/');
+header('Location: /');
 exit;

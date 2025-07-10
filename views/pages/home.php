@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Connexion à la base de données (à placer tout en haut)
 include_once __DIR__ . '/../../includes/db.php';
 
@@ -28,15 +29,15 @@ if (isset($_GET['login'])) {
 <main>
     <section id="accueil" class="landing-hero section-appear">
         <video class="landing-bg-video" autoplay muted loop playsinline>
-            <source src="/EmilieHedou-php/public/assets/landing-v.mp4" type="video/mp4">
+            <source src="/public/assets/landing-v.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo HTML5.
         </video>
         <div class="landing-content">
             <h1>Bienvenue</h1>
             <p>Découvrez l'univers musical d'<strong>Emilie Hedou</strong></p>
             <div class="landing-buttons">
-                <a href="/EmilieHedou-php/#projets" class="see-more">Écouter un extrait</a>
-                <a href="/EmilieHedou-php/concerts" class="see-more">Voir les concerts</a>
+                <a href="/#projets" class="see-more">Écouter un extrait</a>
+                <a href="/concerts" class="see-more">Voir les concerts</a>
             </div>
         </div>
     </section>
@@ -47,7 +48,7 @@ if (isset($_GET['login'])) {
             Emilie Hedou est une artiste passionnée par la musique et l'art. Elle a commencé sa carrière à un jeune âge
             et a depuis lors captivé le public avec sa voix unique et son style musical distinctif.
         </p>
-        <img class="mimibw" src="/EmilieHedou-php/public/assets/mimi_bw.jpg" alt="Biographie Emilie" />
+        <img class="mimibw" src="/public/assets/mimi_bw.jpg" alt="Biographie Emilie" />
         <details class="see-more-dropdown">
             <summary class="see-more">
                 Lire la Bio
@@ -82,7 +83,7 @@ if (isset($_GET['login'])) {
                     </p>
                 </div>
                 <div class="bio-bloc bio-image">
-                    <img class="mimi-bio" src="/EmilieHedou-php/public/assets/mimipresse.jpg" alt="Emilie Hedou" />
+                    <img class="mimi-bio" src="/public/assets/mimipresse.jpg" alt="Emilie Hedou" />
                 </div>
                 <div class="bio-bloc bio-univers">
                     <h3>Un univers personnel entre reprises, compositions et théâtre</h3>
@@ -107,7 +108,7 @@ if (isset($_GET['login'])) {
     <section id="concerts" class="hero section-appear">
     <h1>Concerts</h1>
     <p>Bientôt en concert près de chez vous</p>
-    <img class="mimichant" src="/EmilieHedou-php/public/assets/mimi1.jpg" alt="Concerts Emilie" />
+    <img class="mimichant" src="/public/assets/mimi1.jpg" alt="Concerts Emilie" />
 
     <?php if (empty($concerts_apercu)) : ?>
         <p style="margin-top:1em;">Aucun concert à venir pour le moment.</p>
@@ -155,7 +156,7 @@ if (isset($_GET['login'])) {
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
-    <a href="/EmilieHedou-php/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
+    <a href="/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
 </section>
 
 
@@ -163,7 +164,7 @@ if (isset($_GET['login'])) {
     <section id="projets" class="hero section-appear">
         <h1>Projets</h1>
         <p>Projet en cours et à venir</p>
-        <img class="mimiprojet" src="/EmilieHedou-php/public/assets/mimi-projet.png" alt="Projets Emilie" />
+        <img class="mimiprojet" src="/public/assets/mimi-projet.png" alt="Projets Emilie" />
         <details class="see-more-dropdown">   
             <summary class="see-more">
                 Explorer
@@ -179,7 +180,7 @@ if (isset($_GET['login'])) {
             Retrouvez ici le dossier de presse d'Emilie Hedou, contenant des informations sur sa carrière, ses projets
             et ses concerts. Ce dossier est destiné aux journalistes, blogueurs et professionnels de l'industrie musicale.
         </p>
-        <img class="mimibw" src="/EmilieHedou-php/public/assets/mimipresse.jpg" alt="Dossier de presse Emilie" />
+        <img class="mimibw" src="/public/assets/mimipresse.jpg" alt="Dossier de presse Emilie" />
         <details class="see-more-dropdown">   
             <summary class="see-more">
                 Découvrir

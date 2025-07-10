@@ -1,14 +1,12 @@
 <?php
-session_start();
-// Vérifie si l'utilisateur est connecté et a le bon rôle
-if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
-    header('Location: /EmilieHedou-php/login');
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
+    header('Location: /login');
     exit;
 }
 ?>
-
-
-
 <?php
 // Connexion à la base de données
 include_once __DIR__ . '/../../includes/db.php';
@@ -33,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist'])) {
     header("Location: " . $_SERVER['REQUEST_URI']);
     exit();
 }
-
 // Gestion de la suppression d'un concert
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
@@ -41,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     header("Location: " . $_SERVER['REQUEST_URI']);
     exit();
 }
-
 // Récupération des concerts
 $concerts = [];
 $sql = "SELECT * FROM concerts ORDER BY date ASC";
@@ -66,7 +62,7 @@ if (isset($_GET['login'])) {
 <div class="admin-dashboard">
     <h1>Bienvenue <?= htmlspecialchars($_SESSION['user']['firstname']) ?> </h1>
     <p>Ceci est une page protégée.</p>
-    <a href="/EmilieHedou-php/logout" class="logout-btn">Se déconnecter</a>
+    <a href="/logout" class="logout-btn">Se déconnecter</a>
 </div>
 
 

@@ -1,0 +1,58 @@
+# Dépendances PHP (composer)
+vendor/
+
+# Fichiers d'environnement sensibles
+.env
+.env.local
+.env.docker
+.env.*.local
+
+# Logs et fichiers temporaires
+*.log
+logs/
+php_errors.log
+sessions/
+.cache/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+
+# Fichiers générés par l'IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+
+# Config utilisateur et sauvegardes
+*.bak
+*.old
+*.orig
+
+# Docker artefacts
+docker-compose.override.yml
+
+# PHPUnit
+phpunit.xml
+phpunit.result.cache
+
+# Composer
+composer.phar
+
+# Fichiers de mapping ou documentation temporaire
+treeMap.ini
+
+# Autres archives
+*.zip
+*.tar
+*.tar.gz
+*.gz
+*.rar
+*.7z
