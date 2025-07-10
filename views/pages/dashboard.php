@@ -104,15 +104,16 @@ if ($result && $result->num_rows > 0) {
                 <label for="venue">Lieu</label>
                 <input type="text" id="venue" name="venue" placeholder="Lieu" required>
             </div>
-            <div class="form-group">
-                <label for="date">Date</label>
-                <input type="date" id="date" name="date" required>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Heure</label>
+                    <input type="time" id="time" name="time">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="time">Heure</label>
-                <input type="time" id="time" name="time">
-            </div>
-
             <div class="form-group">
                 <label for="phone">Téléphone pour réserver (facultatif)</label>
                 <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
@@ -128,6 +129,8 @@ if ($result && $result->num_rows > 0) {
             <button type="submit" class="btn-primary">Ajouter le concert</button>
         </form>
     </div>
+</div>
+
 
     <div class="concerts-admin-list">
         <h2>Aperçu des concerts</h2>
@@ -208,8 +211,11 @@ if ($result && $result->num_rows > 0) {
                                         <label>Description</label>
                                         <textarea name="description" rows="3"><?= htmlspecialchars($concert['description']) ?></textarea>
                                     </div>
-                                    <button type="submit" class="btn-primary">Valider</button>
-                                    <button type="button" class="btn-cancel" onclick="hideEditConcertForm(<?= $concert['id'] ?>)">Annuler</button>
+                                    <div class="edit-btn-row">
+                                        <button type="submit" class="btn-primary-edit">Valider</button>
+                                        <button type="button" class="btn-cancel" onclick="hideEditConcertForm(<?= $concert['id'] ?>)">Annuler</button>
+                                    </div>
+
                                 </form>
                             </div>
                         </div>

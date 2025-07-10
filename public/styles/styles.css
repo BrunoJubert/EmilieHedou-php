@@ -1173,6 +1173,7 @@ a.see-more:hover {
   width: 94vw;
 }
 
+
 .add-concert-form h2 {
   text-align: center;
   margin-bottom: 28px;
@@ -1199,7 +1200,7 @@ a.see-more:hover {
   width: 100%;
   padding: 9px 12px;
   border: 1px solid #d1d5db;
-  border-radius: 6px;
+  border-radius: 16px;
   font-size: 1em;
   background: #f9f9f9;
   transition: border-color 0.2s;
@@ -1207,7 +1208,7 @@ a.see-more:hover {
 
 .concert-form input:focus,
 .concert-form textarea:focus {
-  border-color: #007bff;
+  border-color: #000000;
   outline: none;
   background: #fff;
 }
@@ -1225,7 +1226,7 @@ a.see-more:hover {
 
 .btn-primary {
   width: 100%;
-  background: linear-gradient(90deg, #007bff 60%, #0056b3 100%);
+  background: linear-gradient(90deg, #8fda48 60%, #2db461 100%);
   color: #fff;
   border: none;
   padding: 13px 0;
@@ -1239,13 +1240,32 @@ a.see-more:hover {
 }
 
 .btn-primary:hover {
-  background: linear-gradient(90deg, #0056b3 60%, #007bff 100%);
+  background: linear-gradient(90deg, #2db461 60%, #8fda48 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary-edit {
+  width: 100%;
+  background: linear-gradient(90deg, #8fda48 60%, #2db461 100%);
+  color: #fff;
+  border: none;
+  padding: 13px 0;
+  border-radius: 6px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.07);
+}
+
+.btn-primary-edit:hover {
+  background: linear-gradient(90deg, #2db461 60%, #8fda48 100%);
   transform: translateY(-2px) scale(1.02);
 }
 
 .edit-concert-form {
-  background: #f7f7f7;
-  border: 1px solid #ddd;
+  background: #ffffff;
   padding: 15px;
   margin-top: 10px;
   border-radius: 6px;
@@ -1255,19 +1275,72 @@ a.see-more:hover {
   color: #222;
   border: none;
   padding: 6px 12px;
-  border-radius: 4px;
+  border-radius: 24px;
   cursor: pointer;
   margin-right: 5px;
 }
+.edit-btn-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn-primary-edit,
+.btn-cancel {
+  width: 50%;
+  min-width: 0;
+  padding: 13px 0;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.2;         /* même line-height */
+  height: 48px;             /* hauteur fixe pour forcer l'égalité */
+  display: inline-block;    /* ou flex si besoin */
+  vertical-align: middle;
+  margin: 0;                /* aucune marge parasite */
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.07);
+}
+
+.btn-primary-edit {
+  background: linear-gradient(90deg, #8fda48 60%, #2db461 100%);
+  color: #fff;
+}
+
+.btn-primary-edit:hover {
+  background: linear-gradient(90deg, #2db461 60%, #8fda48 100%);
+  transform: translateY(-2px) scale(1.02);
+}
+
 .btn-cancel {
   background: #eee;
   color: #222;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-left: 5px;
 }
+
+.btn-cancel:hover {
+  background: #ddd;
+  color: #222;
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Responsive : empile les boutons sur mobile */
+@media (max-width: 500px) {
+  .edit-btn-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .btn-primary-edit,
+  .btn-cancel {
+    width: 100%;
+    height: 48px;
+  }
+}
+
+
 
 
 .concerts-admin-cards {
@@ -1446,8 +1519,7 @@ a.see-more:hover {
 }
 
 .edit-concert-form {
-  background: #f9f9f9;
-  border: 1px solid #e3e3e3;
+  background: #ffffff;
   border-radius: 6px;
   padding: 10px 12px;
   margin-top: 10px;
