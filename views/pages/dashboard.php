@@ -6,13 +6,12 @@ if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
     header('Location: /login');
     exit;
 }
-?>
-<?php
+
 // Connexion à la base de données
 include_once __DIR__ . '/../../includes/db.php';
 
 // Gestion de l'ajout d'un concert
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist']) && empty($_POST['edit_id']) && empty($_POST['delete_id'])) {
     $artist = $_POST['artist'];
     $image_url = $_POST['image_url'] ?? '';
     $venue = $_POST['venue'];
@@ -31,6 +30,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist'])) {
     header("Location: " . $_SERVER['REQUEST_URI']);
     exit();
 }
+
+// Gestion de la modification d'un concert
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['edit_id'])) {
+    $edit_id = intval($_POST['edit_id']);
+    $artist = $_POST['artist'];
+    $image_url = $_POST['image_url'] ?? '';
+    $venue = $_POST['venue'];
+    $date = $_POST['date'];
+    $time = $_POST['time'] ?? '';
+    $phone = $_POST['phone'] ?? '';
+    $price = $_POST['price'] ?? 0;
+    $description = $_POST['description'] ?? '';
+
+    $stmt = $conn->prepare("UPDATE concerts SET artist=?, image_url=?, venue=?, date=?, time=?, phone=?, price=?, description=? WHERE id=?");
+    $stmt->bind_param("ssssssdsi", $artist, $image_url, $venue, $date, $time, $phone, $price, $description, $edit_id);
+    $stmt->execute();
+    $stmt->close();
+
+    header("Location: " . $_SERVER['REQUEST_URI']);
+    exit();
+}
+
 // Gestion de la suppression d'un concert
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     $delete_id = intval($_POST['delete_id']);
@@ -38,6 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
     header("Location: " . $_SERVER['REQUEST_URI']);
     exit();
 }
+
 // Récupération des concerts
 $concerts = [];
 $sql = "SELECT * FROM concerts ORDER BY date ASC";
@@ -49,14 +71,6 @@ if ($result && $result->num_rows > 0) {
 }
 ?>
 
-<?php
-$showLoginModal = false;
-if (isset($_GET['login'])) {
-    $showLoginModal = true;
-}
-?>
-
-
 <?php include_once __DIR__ . '/../partials/header.php'; ?>
 
 <div class="admin-dashboard">
@@ -64,7 +78,6 @@ if (isset($_GET['login'])) {
     <p>Ceci est une page protégée.</p>
     <a href="/logout" class="logout-btn">Se déconnecter</a>
 </div>
-
 
 <!-- Bouton pour afficher/masquer tout le bloc concerts -->
 <button type="button" class="dashboard-toggle" onclick="toggleConcertsSection()" id="concerts-toggle-btn"
@@ -91,16 +104,15 @@ if (isset($_GET['login'])) {
                 <label for="venue">Lieu</label>
                 <input type="text" id="venue" name="venue" placeholder="Lieu" required>
             </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="date">Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div class="form-group">
-                    <label for="time">Heure</label>
-                    <input type="time" id="time" name="time">
-                </div>
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" required>
             </div>
+            <div class="form-group">
+                <label for="time">Heure</label>
+                <input type="time" id="time" name="time">
+            </div>
+
             <div class="form-group">
                 <label for="phone">Téléphone pour réserver (facultatif)</label>
                 <input type="tel" id="phone" name="phone" placeholder="06 12 34 56 78">
@@ -151,7 +163,54 @@ if (isset($_GET['login'])) {
                                     <input type="hidden" name="delete_id" value="<?= $concert['id'] ?>">
                                     <button type="submit" class="btn-delete" onclick="return confirm('Supprimer ce concert ?')">Supprimer</button>
                                 </form>
-                                <!-- (Tu peux ajouter un bouton Modifier ici plus tard) -->
+                                <!-- Modifier -->
+                                <button type="button"
+                                        class="btn-edit"
+                                        onclick="showEditConcertForm(<?= $concert['id'] ?>)">
+                                    Modifier
+                                </button>
+                            </div>
+                            <!-- Formulaire d'édition inline (caché par défaut) -->
+                            <div id="edit-concert-form-<?= $concert['id'] ?>" class="edit-concert-form" style="display:none; margin-top:10px;">
+                                <form action="" method="POST">
+                                    <input type="hidden" name="edit_id" value="<?= $concert['id'] ?>">
+                                    <div class="form-group">
+                                        <label>Nom de l'artiste</label>
+                                        <input type="text" name="artist" value="<?= htmlspecialchars($concert['artist']) ?>" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Lien de l'image (URL)</label>
+                                        <input type="url" name="image_url" value="<?= htmlspecialchars($concert['image_url']) ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Lieu</label>
+                                        <input type="text" name="venue" value="<?= htmlspecialchars($concert['venue']) ?>" required>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label>Date</label>
+                                            <input type="date" name="date" value="<?= htmlspecialchars($concert['date']) ?>" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Heure</label>
+                                            <input type="time" name="time" value="<?= htmlspecialchars($concert['time']) ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Téléphone</label>
+                                        <input type="tel" name="phone" value="<?= htmlspecialchars($concert['phone']) ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Prix (€)</label>
+                                        <input type="number" name="price" value="<?= htmlspecialchars($concert['price']) ?>" step="0.01" min="0">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <textarea name="description" rows="3"><?= htmlspecialchars($concert['description']) ?></textarea>
+                                    </div>
+                                    <button type="submit" class="btn-primary">Valider</button>
+                                    <button type="button" class="btn-cancel" onclick="hideEditConcertForm(<?= $concert['id'] ?>)">Annuler</button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -163,7 +222,7 @@ if (isset($_GET['login'])) {
 
 <?php include_once __DIR__ . '/../partials/footer.php'; ?>
 
-<!-- JS pour afficher/masquer le bloc concerts -->
+<!-- JS pour afficher/masquer le bloc concerts et les formulaires d'édition -->
 <script>
 function toggleConcertsSection() {
     const section = document.getElementById('concerts-section');
@@ -178,5 +237,12 @@ function toggleConcertsSection() {
         btn.setAttribute('aria-expanded', 'false');
         arrow.innerHTML = '►';
     }
+}
+
+function showEditConcertForm(id) {
+    document.getElementById('edit-concert-form-' + id).style.display = 'block';
+}
+function hideEditConcertForm(id) {
+    document.getElementById('edit-concert-form-' + id).style.display = 'none';
 }
 </script>
