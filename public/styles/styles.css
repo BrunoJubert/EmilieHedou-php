@@ -5,9 +5,9 @@
 */
 :root {
   /* Couleurs */
-  --landing-button: #d120d1;
-  --primary-dark: #b44ca3;
-  --secondary-dark: #5e2955;
+  --landing-button: #d1b61d;
+  --primary-dark: #ad5b0f;
+  --secondary-dark: #000000;
   --primary-darker: #000000;
   --text-light: #ffffff;
   --text-muted: #e0e0e0;
@@ -20,14 +20,13 @@
   --header-height: 100px;
 
   /* Effets */
-  --button-shadow: 0 2px 12px rgba(233, 69, 96, 0.15);
+  --button-shadow: 0 2px 12px rgba(245, 156, 54, 0.15);
   --transition-speed: 0.2s;
   --border-radius: 24px;
 
   /* Sidebar */
   --sidebar-width-open: 240px;
   --sidebar-width-closed: 70px;
-  --sidebar-bg: #363696;
   --sidebar-radius: 28px;
   --sidebar-transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -62,11 +61,11 @@ body {
 }
 
 body {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: 100vh;
+  background: linear-gradient(135deg, #faf7f2 0%, #f6f3eb 100%);  min-height: 100vh;
   margin: 0;
   color: var(--primary-dark);
 }
+
 /*
 ////////////////////////////////////////////////////////////////////////
 ///////////////////////////// HEADER ///////////////////////////////////
@@ -476,7 +475,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(238, 139, 25, 0.219);
+  background: rgba(182, 106, 19, 0.116);
   z-index: 1;
   pointer-events: none;
 }
@@ -532,7 +531,7 @@ body {
 .submit,
 .see-more {
   text-decoration: none;
-  background: var(--primary-dark);
+  background: var(--landing-button);
   color: var(--text-light);
   border: none;
   padding: 10px 26px;
@@ -561,7 +560,7 @@ a.see-more:hover {
 
 .see-more-dropdown summary {
   cursor: pointer;
-  background: var(--primary-dark);
+  background: var(--landing-button);
   color: var(--text-light);
   padding: 12px 24px;
   border-radius: var(--border-radius, 25px);
@@ -850,7 +849,7 @@ a.see-more:hover {
 }
 
 .social-icons a {
-  color: var(--secondary-dark);
+  color: var(--landing-button);
   font-size: 1.5rem;
   transition: transform 0.3s ease, color 0.3s ease;
   text-decoration: none;
@@ -1782,24 +1781,19 @@ a.see-more:hover {
 
   .nav-links li a:hover i,
   .nav-links li a:focus i {
-    background: var(--primary-dark);
+    background: var(--landing-button);
     color: var(--text-light);
     transition: background 0.18s, color 0.18s, box-shadow 0.18s;
   }
 
   .nav-links li a:hover,
   .nav-links li a:focus {
-    color: var(--primary-darker);
+    color: var(--landing-button);
     border-radius: 0 14px 14px 0;
-    background-clip: padding-box; /* limite le fond à la zone padding */
+    background-clip: padding-box; 
     transition: background 0.18s, color 0.18s, border-radius 0.18s;
 }
 
-
-  .nav-links li a:hover,
-  .nav-links li a:focus {
-    color: var(--primary-darker);
-  }
 
   .burger {
     display: none;
