@@ -46,6 +46,10 @@ if (isset($_GET['login'])) {
                     <div class="concert-card" style="<?= $bgImage ?>">
                         <div class="concert-card-content">
                             <div class="concert-card-main">
+                                <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
+                                <?php if (!empty($concert['description'])) : ?>
+                                    <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
+                                <?php endif; ?>
                                 <div class="concert-info">
                                     <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
                                     <span class="concert-date">
@@ -57,10 +61,6 @@ if (isset($_GET['login'])) {
                                         </span>
                                     <?php endif; ?>
                                 </div>
-                                <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
-                                <?php if (!empty($concert['description'])) : ?>
-                                    <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
-                                <?php endif; ?>
                                 <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
                                     <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
                                 <?php endif; ?>
@@ -82,6 +82,8 @@ if (isset($_GET['login'])) {
         <?php endif; ?>
     </div>
 </section>
+
+
 
 
 <?php include_once __DIR__ . '/../partials/footer.php'; ?>

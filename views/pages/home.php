@@ -29,7 +29,7 @@ if (isset($_GET['login'])) {
 <main>
     <section id="accueil" class="landing-hero section-appear">
         <video class="landing-bg-video" autoplay muted loop playsinline>
-            <source src="/public/assets/landing-v.mp4" type="video/mp4">
+            <source src="/public/assets/mimi_landing.mp4" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo HTML5.
         </video>
         <div class="landing-content">
@@ -127,17 +127,19 @@ if (isset($_GET['login'])) {
                 ?>
                 <div class="concert-card" style="<?= $bgImage ?>">
                     <div class="concert-card-content">
-                        <div class="concert-info">
-                            <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
-                            <span class="concert-date"><?= date('d/m/Y', strtotime($concert['date'])) ?></span>
-                            <?php if (!empty($concert['time'])) : ?>
-                                <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
-                            <?php endif; ?>
-                        </div>
                         <h3 class="concert-artist"><?= htmlspecialchars($concert['artist']) ?></h3>
                         <?php if (!empty($concert['description'])) : ?>
                             <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
                         <?php endif; ?>
+                        <div class="concert-info">
+                            <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
+                            <span class="concert-date">
+                                <?= date('d/m/Y', strtotime($concert['date'])) ?>
+                            </span>
+                            <?php if (!empty($concert['time'])) : ?>
+                                <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
+                            <?php endif; ?>
+                        </div>
                         <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
                             <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
                         <?php endif; ?>
@@ -158,6 +160,7 @@ if (isset($_GET['login'])) {
     <?php endif; ?>
     <a href="/concerts" class="see-more" style="margin-top:2em;display:inline-block;"><strong>Voir les dates</strong></a>
 </section>
+
 
 
 
