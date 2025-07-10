@@ -164,18 +164,74 @@ if (isset($_GET['login'])) {
 
 
 
-    <section id="projets" class="hero section-appear">
-        <h1>Projets</h1>
-        <p>Projet en cours et à venir</p>
-        <img class="mimiprojet" src="/public/assets/mimi-projet.png" alt="Projets Emilie" />
-        <details class="see-more-dropdown">   
-            <summary class="see-more">
-                Explorer
-                <span class="arrow" aria-hidden="true"></span>
-            </summary> 
+<section id="projets" class="hero section-appear">
+    <h1>Projets</h1>
+    <p>Retrouvez dans cette section les projets auxquels <strong>Emilie</strong> participe <br>
+       ainsi que les vidéos de ses performances.</p>                     
+    </p>
+    <img class="mimiprojet" src="/public/assets/mimi-projet.png" alt="Projets Emilie" />
+    <details class="see-more-dropdown">   
+        <summary class="see-more">
+            Explorer
+            <span class="arrow" aria-hidden="true"></span>
+        </summary> 
+        <div class="projets-videos">
+            <div class="projet-video-bloc">
+                <h3>Emilie HEDOU Trio</h3>
+                <p>Un trio original où guitare et contre basse accompagnent la voix suave et puissante d' <strong>Emilie</strong>.
+                    Un voyage musical à travers les classiques de la soul et du blues, avec des compositions 
+                    personnelles et des arrangements uniques. 
+                    Dans cette vidéo, vous découvrirez une composition originale d'<strong>Emilie Hedou</strong>  avec des arrangements de <a href="https://www.youtube.com/channel/UCBvrYWYNEgNa8AG8K8oO3Ag"><strong>Nicolas Blampain</strong></a>.
+                    Ils sont accompagnés de <strong>Brahim Haiouani</strong> à la contrebasse.
+                </p>
+                <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HlU5LDiVopo?si=46SPc0hl_brp33pL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="projet-video-bloc">
+                <h3>Soul Serenade avec Emilie Hedou</h3>
+                <p>
+                    Un hommage vibrant a la soul music, d' <strong>Aretha Franklin</strong> à <strong>Ray Charles</strong>,
+                    ce projet met en lumière les classiques intemporels des plus grandes voix de la soul, interprétés par la voix puissante et émotive d'<strong>Emilie Hedou</strong>.
+                    Dans cette vidéo, vous découvrirez une performance live du groupe Soul Serenade avec une distrubution de musiciens talentueux :
+                    <br>
+                    <strong>Michel Bonnet</strong> (Trompette, Choeur), 
+                    <strong>Pierre-Louis Cas</strong> (Sax Ténor, Choeur), 
+                    <strong>Pierre Guicquéro</strong> (Trombonne, Choeur), 
+                    <strong>Pierre Jean</strong> (Piano, Clavier), 
+                    <strong>Laurent Vanhée</strong> (Contre basse) 
+                    et <strong>Michel Sénamaud</strong> (Batterie, Choeur).
+                </p>
+                <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/kpq7Hi9F2ec?si=gW6BQVyJHHGm1OgK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
+                     web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="projet-video-bloc">
+                <h3>Paris Soul Connexion</h3>
+                <p>
+                    Un projet qui réunit des artistes de la scène soul parisienne pour créer une connexion musicale unique.
+                    <strong>Emilie Hedou</strong> y apporte sa touche personnelle et sa voix envoûtante, accompagnée de musiciens de renom.
+                    Dans cette vidéo, vous découvrirez un extrait d'une performance live du groupe Paris Soul Connexion.
+                    mettant en avant le duo : <strong>Emilie Hedou</strong> ainsi que de <strong>Jean-Marrier</strong>.
+                    Ils sont ici accompagnés de musiciens de renommée mondiale : 
+                    <br>
+                    <strong>Benoît Sourisse</strong> ( Orgue Hammond, Clavier),
+                    <strong>Lemmy Feuvray</strong> (Guitare),
+                    <strong>André Charlier</strong> : (Batterie).
+        
 
-        </details>   
-    </section>
+                </p>
+                <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/rYVZ71Vv45g?si=iwA3_wyvYHsjVBG2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+                    web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </details>   
+</section>
+
 
     <section id="presse" class="hero section-appear">
         <h1>Dossier de presse</h1>

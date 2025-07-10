@@ -1546,6 +1546,53 @@ a.see-more:hover {
   }
 }
 
+.projets-videos {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin: 36px 0 0 0;
+}
+
+.projet-video-bloc {
+  /* Plus de fond, plus de bordure, plus d'ombre ! */
+  padding: 0 0 36px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projet-video-bloc h3 {
+  margin-top: 0;
+  color: var(--primary-dark);
+  font-size: 1.2em;
+}
+
+.projet-video-bloc p {
+  color: #444;
+  margin-bottom: 18px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* Ratio 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  /* Optionnel : une ombre très légère pour détacher la vidéo du fond */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 0;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: 0;
+  border-radius: 14px;
+  background: #000; /* Pour éviter le flash blanc au chargement */
+}
+
+
 /*
 ////////////////////////////////////////////////////////////////////////
 //////////////////////////// RESPONSIVE ////////////////////////////////
