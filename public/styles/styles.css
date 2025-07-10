@@ -303,6 +303,7 @@ body {
   height: auto;
   display: block;
   margin: 0 auto 20px;
+  border: solid 2px var(--primary-dark);
 }
 
 .section-appear {
@@ -644,15 +645,14 @@ a.see-more:hover {
 .concert-card-content {
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centre verticalement tout le contenu */
-  align-items: center;     /* centre horizontalement */
-  height: 100%;            /* occupe toute la hauteur de la card */
-  text-align: center;      /* centre le texte à l’intérieur */
-  gap: 12px;               /* espace entre les éléments */
-  padding: 18px 20px 20px 20px; /* garde ton padding */
+  justify-content: center;
+  align-items: center;    
+  height: 100%;            
+  text-align: center;      
+  gap: 12px;              
+  padding: 18px 20px 20px 20px; 
 }
 
-/* Conteneur spécifique au numéro + bouton */
 .concert-phone {
   display: flex;
   flex-direction: column;
@@ -660,7 +660,6 @@ a.see-more:hover {
   gap: 6px;
 }
 
-/* Style du numéro */
 .phone-number {
   font-size: 1.1em;
   font-weight: 500;
@@ -1393,10 +1392,11 @@ a.see-more:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 14px;
+  border-radius: 20px;
   box-shadow: 0 2px 12px rgba(0,0,0,0.12);
   overflow: hidden;
   position: relative;
+  border: solid 2px var(--primary-dark);
 }
 
 .concert-card-content {
@@ -1405,8 +1405,7 @@ a.see-more:hover {
   justify-content: space-between; /* Espace entre le haut et le bas */
   height: 100%;
   padding: 18px 20px 20px 20px;
-  background: rgba(255, 255, 255, 0.89);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.897);
   margin: 0;
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   flex: 1 1 auto;
@@ -1434,6 +1433,8 @@ a.see-more:hover {
   justify-content: center;
   border-radius: 12px 12px 0 0;
 }
+
+
 
 .concert-img {
   max-width: 100%;
@@ -1841,7 +1842,7 @@ a.see-more:hover {
 
   .see-more:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(39, 100, 146, 0.7);
+    background-color: var(--primary-dark);
   }
 
   .hero h1 {
