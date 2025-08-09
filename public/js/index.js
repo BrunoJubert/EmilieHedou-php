@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
-  
+
   // --- HEADER SCROLL (uniquement pour mobile) ---
   const header = document.querySelector(".musician-header");
   let lastScrollY = window.scrollY;
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     },
     {
-      threshold: 0.2,
+      threshold: 0.05,
     }
   );
   sections.forEach((section) => observer.observe(section));

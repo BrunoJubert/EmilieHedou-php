@@ -1,12 +1,12 @@
 <footer class="site-footer">
     <div class="footer-content">
         <div class="contact-info">
-            <p> <i class="fa-solid fa-phone"></i> <a href="tel:+33707070707"> 07 07 07 07 07</a></p>
+            <!-- <p> <i class="fa-solid fa-phone"></i> <a href="tel:+33707070707"> 07 07 07 07 07</a></p> -->
             <p> <i class="fa-solid fa-envelope"></i><a href="mailto:emiliehedou77@gmail.com">
                     emiliehedou77@gmail.com</a></p>
-            <a href="#admin-login-modal" id="admin-login-link" title="Connexion admin">
+            <!-- <a href="#admin-login-modal" id="admin-login-link" title="Connexion admin">
                 <i class="fa-solid fa-lock"></i> Connexion admin</a>
-            </a>
+            </a> -->
         </div>
         <div class="social-icons">
             <a href="https://www.instagram.com/emiliehedou/" target="_blank" rel="noopener" aria-label="Instagram">

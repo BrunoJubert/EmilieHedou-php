@@ -6,7 +6,7 @@
 :root {
   /* Couleurs */
   --landing-button: #d1b61d;
-  --primary-dark: #ad5b0f;
+  --primary-dark: #b80101;
   --secondary-dark: #000000;
   --primary-darker: #000000;
   --text-light: #ffffff;
@@ -591,6 +591,7 @@ a.see-more:hover {
   box-shadow: 0 4px 20px rgba(39, 100, 146, 0.541);
   transform: translateY(-1px);
 }
+
 
 /* Flèche à droite du texte */
 .see-more-dropdown .arrow {
@@ -1593,6 +1594,7 @@ a.see-more:hover {
 }
 
 
+
 /*
 ////////////////////////////////////////////////////////////////////////
 //////////////////////////// RESPONSIVE ////////////////////////////////
@@ -1968,4 +1970,15 @@ a.see-more:hover {
     padding: 12px 10px 16px 10px;
     font-size: 0.97em;
   }
+
+  .kit {
+    display: flex;
+    flex-direction: row;
+  }
+  .kit img {
+    flex: 1 1 50%;
+    max-width: 30%;
+    height: auto;
+  }
+  
 }

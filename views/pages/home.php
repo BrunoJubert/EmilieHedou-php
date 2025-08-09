@@ -49,12 +49,12 @@ if (isset($_GET['login'])) {
             et a depuis lors captivé le public avec sa voix unique et son style musical distinctif.
         </p>
         <img class="mimibw" src="/public/assets/mimi_bw.jpg" alt="Biographie Emilie" />
-        <details class="see-more-dropdown">
+        <details class="see-more-dropdown" id="bio-details">
             <summary class="see-more">
                 Lire la Bio
                 <span class="arrow" aria-hidden="true"></span>
             </summary>
-            <div class="bio-content bio-grid" id="bio-details">
+            <div class="bio-content bio-grid">
                 <div class="bio-bloc bio-voix">
                     <h3>Une voix lumineuse et un lien puissant avec le public</h3>
                     <p>
@@ -170,7 +170,7 @@ if (isset($_GET['login'])) {
        ainsi que les vidéos de ses performances.</p>                     
     </p>
     <img class="mimiprojet" src="/public/assets/mimi-projet.png" alt="Projets Emilie" />
-    <details class="see-more-dropdown">   
+    <details class="see-more-dropdown" id="bio-details">   
         <summary class="see-more">
             Explorer
             <span class="arrow" aria-hidden="true"></span>
@@ -234,20 +234,30 @@ if (isset($_GET['login'])) {
 
 
     <section id="presse" class="hero section-appear">
-        <h1>Dossier de presse</h1>
-        <p>
-            Retrouvez ici le dossier de presse d'Emilie Hedou, contenant des informations sur sa carrière, ses projets
-            et ses concerts. Ce dossier est destiné aux journalistes, blogueurs et professionnels de l'industrie musicale.
-        </p>
-        <img class="mimibw" src="/public/assets/mimipresse.jpg" alt="Dossier de presse Emilie" />
-        <details class="see-more-dropdown">   
-            <summary class="see-more">
-                Découvrir
-                <span class="arrow" aria-hidden="true"></span>
-            </summary> 
-             
-        </details>    
-    </section>
+  <h1>Kit presse</h1>
+  <p>
+    Retrouvez ici le kit presse d'Emilie Hedou, contenant des informations sur sa carrière, ses projets
+    et ses concerts. Ce kit est destiné aux journalistes, blogueurs et professionnels de l'industrie musicale.
+  </p>
+
+  <details class="see-more-dropdown" id="kit-details">  
+    <summary class="see-more">
+      Découvrir
+      <span class="arrow" aria-hidden="true"></span>
+    </summary> 
+
+    <div class="kit">
+      <img src="/public/assets/kit_presse_recto.jpg" alt="Dossier de presse Emilie - Recto" />
+      <img src="/public/assets/kit_presse_verso.jpg" alt="Dossier de presse Emilie - Verso" />
+    </div>
+
+    <a href="/public/assets/kit_presse.pdf" download class="btn-download-pdf" aria-label="Télécharger le kit presse au format PDF">
+      Télécharger le kit presse (PDF)
+    </a>
+  </details>    
+</section>
+
+
 
     <section id="contact" class="contact-section hero section-appear">
         <h1>Contact</h1>
