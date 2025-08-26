@@ -22,11 +22,16 @@ if (isset($_GET['login'])) {
 ?>
 
 
-<?php include_once __DIR__ . '/../partials/header.php'; ?>
+<?php
+$page = 'concerts';
+include_once __DIR__ . '/../partials/header.php';
+?>
 
-<section id="concerts" class="hero section-appear">
-    <h1>Concerts</h1>
-    <p>Retrouvez ici les prochaines dates de concerts d'Emilie Hedou.</p>
+   <div class="concert-header">    
+       <h1>Concerts</h1>
+       <p>Retrouvez ici les prochaines dates de concerts d'Emilie Hedou.</p>
+   </div>
+<section id="concerts" class="hero concert-hero">
     <div class="concert-list">
         <?php if (empty($concerts)) : ?>
             <p>Aucun concert à venir pour le moment.</p>

@@ -1,0 +1,28 @@
+.concert-hero {
+  position: relative;
+  background-image: url('/public/assets/mimi-projet.png'); 
+  background-size: 1650px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  opacity: 1;
+}
+
+.concert-header {
+  text-align: center;
+  max-width: 800px;
+  max-height: 0px;
+  margin: 80px auto;
+  padding: 1rem;
+}
+
+.concert-card {
+    margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .concert-header {
+      margin: 20px auto;
+
+  }
+}

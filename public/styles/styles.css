@@ -1398,6 +1398,7 @@ a.see-more:hover {
   overflow: hidden;
   position: relative;
   border: solid 2px var(--primary-dark);
+  margin-top: 2rem;
 }
 
 .concert-card-content {
@@ -1944,32 +1945,7 @@ a.see-more:hover {
 }
 
 
-  .concert-cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 28px;
-    max-width: 700px; 
-    margin: 0 auto;
-  }
-  .concert-card {
-    max-width: 100%;
-    min-width: 0;
-    width: 100%;
-    padding: 0;
-  }
-  .concert-card-img-wrapper {
-    height: 120px;
-    min-height: 0;
-    border-radius: 12px 12px 0 0;
-  }
-  .concert-img {
-    height: 100%;
-    object-fit: cover;
-  }
-  .concert-card-content {
-    padding: 12px 10px 16px 10px;
-    font-size: 0.97em;
-  }
+  
 
   .kit {
     display: flex;

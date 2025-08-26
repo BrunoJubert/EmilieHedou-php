@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <script src="/public/js/coockieManager.js"></script>
     <link rel="stylesheet" href="/public/styles/styles.css" />
+    <?php if (isset($page) && $page === 'concerts') : ?>
+        <link rel="stylesheet" href="/public/styles/concert.css" />
+    <?php endif; ?>
 </head>
 
 <body>
