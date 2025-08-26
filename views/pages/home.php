@@ -280,7 +280,7 @@ if (isset($_GET['login'])) {
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
             </div>
-            <button type="submit" class="submit"><strong>Envoyer</strong></button>
+            <button type="submit" class="submit see-more"><strong>Envoyer</strong></button>
         </form>
     </section>
 </main>
