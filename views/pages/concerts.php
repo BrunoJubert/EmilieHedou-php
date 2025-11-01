@@ -26,7 +26,6 @@ if (isset($_GET['login'])) {
 $page = 'concerts';
 include_once __DIR__ . '/../partials/header.php';
 ?>
-<!-- /* Concerts Page Content */ -->
    <div class="concert-header">    
        <h1>Concerts</h1>
        <p>Retrouvez ici les prochaines dates de concerts d'Emilie Hedou.</p>
