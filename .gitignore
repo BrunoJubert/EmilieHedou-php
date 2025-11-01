@@ -56,3 +56,4 @@ treeMap.ini
 *.gz
 *.rar
 *.7z
+traefik/acme.json
