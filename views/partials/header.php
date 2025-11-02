@@ -63,7 +63,7 @@
                 <li>
                     <a href="/#presse">
                         <i class="fas fa-newspaper"></i>
-                        <span class="nav-label">Presse</span>
+                        <span class="nav-label">Docs</span>
                     </a>
                 </li>
                 <li>
