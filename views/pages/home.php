@@ -234,10 +234,10 @@ if (isset($_GET['login'])) {
 
 
     <section id="presse" class="hero section-appear">
-  <h1>Kit presse</h1>
+  <h1>Docs</h1>
   <p>
-    Retrouvez ici le kit presse d'Emilie Hedou, contenant des informations sur sa carrière, ses projets
-    et ses concerts. Ce kit est destiné aux journalistes, blogueurs et professionnels de l'industrie musicale.
+    Retrouvez ici le kit de présentation d'Emilie Hedou, contenant des informations sur sa carrière, ses projets
+    et ses concerts. N'hésitez pas à le télécharger pour en savoir plus sur cette artiste talentueuse.
   </p>
 
   <details class="see-more-dropdown" id="kit-details">  
@@ -251,8 +251,8 @@ if (isset($_GET['login'])) {
       <img src="/public/assets/kit_presse_verso.jpg" alt="Dossier de presse Emilie - Verso" />
     </div>
 
-    <a href="/public/assets/kit_presse.pdf" download class="btn-download-pdf" aria-label="Télécharger le kit presse au format PDF">
-      Télécharger le kit presse (PDF)
+    <a href="/public/assets/kit_presse.pdf" download class="btn-download-pdf" aria-label="Télécharger le kit de présentation au format PDF">
+      Télécharger le kit de présentation (PDF)
     </a>
   </details>    
 </section>
