@@ -7,7 +7,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /home/debian/www/emiliehedou:/var/www/html
+      - C:\xampp\htdocs\EmilieHedou-php:/var/www/html
       - /etc/letsencrypt:/etc/letsencrypt:ro   # Monter les certificats letsencrypt en lecture seule
       - ./apache-config:/etc/apache2/sites-available
     depends_on:

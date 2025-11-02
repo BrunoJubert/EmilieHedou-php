@@ -1,6 +1,12 @@
 # Dépendances PHP (composer)
 vendor/
 
+# docker-compose.yml
+docker-compose.yml
+
+#docker files
+Dockerfile
+
 # Fichiers d'environnement sensibles
 .env
 .env.local
