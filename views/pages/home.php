@@ -214,8 +214,8 @@ if (isset($_GET['login'])) {
                     Un projet qui réunit des artistes de la scène soul parisienne pour créer une connexion musicale unique.
                     <strong>Emilie Hedou</strong> y apporte sa touche personnelle et sa voix envoûtante, accompagnée de musiciens de renom.
                     Dans cette vidéo, vous découvrirez un extrait d'une performance live du groupe Paris Soul Connexion.
-                    mettant en avant le duo : <strong>Emilie Hedou</strong> ainsi que de <strong>Jean-Marrier</strong>.
-                    Ils sont ici accompagnés de musiciens de renommée mondiale : 
+                    mettant en avant <strong>Emilie Hedou</strong> au chant. <br>
+                    Elle est ici accompagnée de musiciens de renommée mondiale : 
                     <br>
                     <strong>Benoît Sourisse</strong> ( Orgue Hammond, Clavier),
                     <strong>Lemmy Feuvray</strong> (Guitare),
@@ -224,8 +224,7 @@ if (isset($_GET['login'])) {
 
                 </p>
                 <div class="video-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/rYVZ71Vv45g?si=iwA3_wyvYHsjVBG2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
-                    web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/9zGsdVfBu_k?si=F1tOcEVskbYW4j8K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
