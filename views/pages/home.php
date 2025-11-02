@@ -132,14 +132,27 @@ if (isset($_GET['login'])) {
                             <p class="concert-description"><?= htmlspecialchars($concert['description']) ?></p>
                         <?php endif; ?>
                         <div class="concert-info">
-                            <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
-                            <span class="concert-date">
-                                <?= date('d/m/Y', strtotime($concert['date'])) ?>
-                            </span>
-                            <?php if (!empty($concert['time'])) : ?>
-                                <span class="concert-time">à <?= substr($concert['time'], 0, 5) ?></span>
-                            <?php endif; ?>
-                        </div>
+                                    <span class="concert-venue"><?= htmlspecialchars($concert['venue']) ?></span>
+                                    <?php
+                                    $jours = ['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+                                    $mois = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+
+                                    $date = new DateTime($concert['date']);
+                                    $jour = $jours[$date->format('w')];
+                                    $moisNom = $mois[$date->format('n') - 1];
+                                    $jourNum = $date->format('d');
+                                    $annee = $date->format('Y');
+                                    ?>
+                                    <span class="concert-date">
+                                        <?= "$jour $jourNum $moisNom $annee" ?>
+                                    </span>
+
+                                    <?php if (!empty($concert['time'])) : ?>
+                                        <span class="concert-time">
+                                            à <?= substr($concert['time'], 0, 5) ?>
+                                        </span>
+                                    <?php endif; ?>
+                                </div>
                         <?php if (!empty($concert['price']) && $concert['price'] > 0) : ?>
                             <p class="concert-price"><strong>Prix :</strong> <?= number_format($concert['price'], 2) ?> €</p>
                         <?php endif; ?>

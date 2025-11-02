@@ -1371,7 +1371,7 @@ a.see-more:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.08em;
+  font-size: 1.5rem;
   margin-bottom: 8px;
   color: #444;
 }
@@ -1438,22 +1438,11 @@ a.see-more:hover {
 
 
 
-.concert-img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  display: block;
-}
-
-
-
 .concert-info {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  font-size: 0.95em;
+  font-size: 1.25rem;
   color: #444;
   margin-bottom: 8px;
 }
@@ -1475,13 +1464,13 @@ a.see-more:hover {
 
 .concert-artist {
   margin: 0 0 6px 0;
-  font-size: 1.22em;
+  font-size: 1.5rem;
   color: #222;
   font-weight: 600;
 }
 
 .concert-description {
-  font-size: 0.9em!important;
+  font-size: 1rem;
   line-height: 1.5;
   color: #444;
   margin-bottom: 10px;
