@@ -158,12 +158,10 @@ if (isset($_GET['login'])) {
                         <?php endif; ?>
                         <?php if (!empty($concert['phone'])) : ?>
                         <div class="concert-phone">
-                            <span class="phone-number"><?= htmlspecialchars($concert['phone']) ?></span>
-                            <a href="tel:<?= htmlspecialchars($concert['phone']) ?>"
-                               class="btn-call"
-                               title="Appeler pour réserver">
-                                <i class="fas fa-phone"></i>Téléphoner
-                            </a>
+                                <span class="phone-number"><?= htmlspecialchars($concert['phone']) ?></span>
+                                <a href="tel:<?= htmlspecialchars($concert['phone']) ?>" class="btn-call" title="Appeler pour réserver">
+                                    <i class="fas fa-phone"></i>Téléphoner
+                                </a>
                         </div>
                         <?php endif; ?>
                     </div>
