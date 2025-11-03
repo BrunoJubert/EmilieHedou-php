@@ -129,8 +129,8 @@ section#concerts.hero.concert-hero {
 .concert-phone a {
   color: #333;
   text-decoration: none;
-  border-radius: 15px;
-  padding: 0.25rem 0.5rem;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
   background-color: #1ea740;
   color: #fff;
 }
