@@ -78,7 +78,7 @@ include_once __DIR__ . '/../partials/header.php';
                             <div class="concert-phone">
                                 <span class="phone-number"><?= htmlspecialchars($concert['phone']) ?></span>
                                 <a href="tel:<?= htmlspecialchars($concert['phone']) ?>" class="btn-call" title="Appeler pour réserver">
-                                    Téléphoner
+                                    <i class="fas fa-phone"></i>Téléphoner
                                 </a>
                             </div>
                             <?php endif; ?>
