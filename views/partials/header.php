@@ -45,6 +45,23 @@
 
     <!-- Script cookies -->
     <script src="/public/js/coockieManager.js"></script>
+    <!-- JSON-LD pour Emilie Hedou -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Emilie Hedou",
+  "image": "https://www.emiliehedou.fr/public/assets/mimi1.jpg",
+  "url": "https://www.emiliehedou.fr",
+  "sameAs": [
+    "https://www.facebook.com/emilie.hedou.9",
+    "https://www.instagram.com/emiliehedou/",
+    "https://youtube.com/@emiliehedou5102?si=Jz-OAKKba4nGenGU"
+  ],
+  "jobTitle": "Chanteuse Soul & Blues"
+}
+</script>
+
 </head>
 
 
