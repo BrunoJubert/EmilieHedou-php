@@ -160,5 +160,8 @@ section#concerts.hero.concert-hero {
     width: 100%;
   }
 
+  p.concert-description {
+    font-size: 1rem;
+  }
  
 }
