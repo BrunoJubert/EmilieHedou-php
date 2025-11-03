@@ -10,9 +10,10 @@ if (isset($_GET['login'])) {
 
 <main>
     <section id="confidentialite">
-        <div class="hero">
+        <div class="hero hero-confidentialite">
+            <div class="margin-top"></div>
             <h2>Politique de Confidentialité</h2>
-            <p>Dernière mise à jour : 29 AVRIL 2025</p>
+            <p>Dernière mise à jour : 03 Novembre 2025</p>
 
             <h3>Collecte de données</h3>
             <p>Notre site ne collecte aucune donnée personnelle directement. Nous n'utilisons pas de cookies ni de
@@ -38,7 +39,7 @@ if (isset($_GET['login'])) {
             <h3>Contact</h3>
             <p>Pour toute question concernant cette politique de confidentialité ou pour demander une mise à jour,
                 vous pouvez nous contacter à l'adresse suivante : <a
-                    href="mailto:emiliehedou77@gmail.com">emiliehedou77@gmail.com</a></p>
+                    href="mailto:bewvedtech@gmail.com">bewvedtech@gmail.com</a></p>
         </div>
     </section>
 </main>
