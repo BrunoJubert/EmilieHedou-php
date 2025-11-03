@@ -1508,11 +1508,20 @@ div.kit{
 }
 
 .concert-phone a {
-  color: #333;
+   color: #333;
   text-decoration: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  background-color: #1ea740;
+  color: #fff;
 }
 .concert-phone a:hover {
-  text-decoration: underline;
+  background-color: #207a37;
+  text-decoration: none;
+}
+
+span.phone-number {
+  display: none;
 }
 
 .edit-concert-form {
