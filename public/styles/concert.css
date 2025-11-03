@@ -140,6 +140,10 @@ section#concerts.hero.concert-hero {
   text-decoration: none;
 }
 
+.phone-number {
+  display: none;
+}
+
 /* ==============================
    Desktop: deux colonnes
    ============================== */
