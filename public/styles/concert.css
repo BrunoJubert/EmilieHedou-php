@@ -1,26 +1,43 @@
-/* Hero */
+/* ==============================
+   Hero
+   ============================== */
 .concert-hero {
   position: relative;
-  background-image: url('/public/assets/etoilefunky.jpg'); 
-  background-size: cover;
-  background-position: center;
+  background-image: url('/public/assets/etoilefunky.jpg');
+  background-size: cover;         /* couvre toute la zone */
+  background-position: center;    /* centre l'image */
   background-repeat: no-repeat;
-  min-height: 300px;
+  background-attachment: fixed;   /* image fixe */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 1;
+  flex-direction: column;         /* empile le contenu verticalement */
+  align-items: center;            /* centre horizontalement */
+  justify-content: flex-start;    /* colle le contenu en haut */
+  overflow: hidden;
 }
 
-/* Header */
+/* ==============================
+   Header
+   ============================== */
 .concert-header {
   text-align: center;
   max-width: 800px;
-  margin: 80px auto;
-  padding: 1rem;
+  margin: 75px auto 10px auto; /* réduit le top et bottom sur mobile */
+  padding: 0.5rem 1rem;        /* moins de padding vertical */
 }
 
-/* Concert cards container */
+.concert-header p {
+  font-size: 1.1rem;
+}
+
+section#concerts.hero.concert-hero {
+    margin-top: 30px;
+}
+
+
+
+/* ==============================
+   Concert cards container
+   ============================== */
 .concert-list {
   max-width: 1200px;
   margin: 0 auto;
@@ -29,16 +46,17 @@
 
 .concert-cards-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
+  grid-template-columns: 1fr;     /* mobile: une colonne */
 }
 
-/* Concert card */
+/* ==============================
+   Concert card
+   ============================== */
 .concert-card {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  border-radius: 15px;
+  border-radius: 25px;
   overflow: hidden;
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   transition: transform 0.2s;
@@ -48,9 +66,6 @@
   transform: translateY(-5px);
 }
 
-.concert-card-content {
-  padding: 1rem;
-}
 
 .concert-card-main h3 {
   margin: 0 0 0.5rem 0;
@@ -65,37 +80,68 @@
 .concert-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  font-size: 0.9rem;
+  gap: 15px;
+  font-size: 1.2rem;
   color: #555;
+}
+
+.concert-venue {
+  font-style: italic;
+  color: #666;
+}
+
+.concert-date, .concert-time {
+  font-weight: 500;
+  color: #1a7ab6;
 }
 
 .concert-price {
   font-size: 0.95rem;
   margin-top: 0.5rem;
+  color: #1a7ab6;
+  font-weight: 500;
 }
 
 .concert-phone {
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
 }
 
-.btn-call {
-  display: inline-block;
-  margin-left: 0.5rem;
+.concert-phone a {
+  color: #333;
+  text-decoration: none;
+  border-radius: 15px;
   padding: 0.25rem 0.5rem;
   background-color: #1ea740;
   color: #fff;
-  text-decoration: none;
-  border-radius: 15px;
 }
 
-.btn-call:hover {
+.concert-phone a:hover {
   background-color: #207a37;
+  text-decoration: none;
 }
 
-/* Desktop: deux colonnes */
+/* ==============================
+   Desktop: deux colonnes
+   ============================== */
 @media (min-width: 900px) {
   .concert-cards-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 20px;
+    max-width: 650px;
   }
+
+  .concert-hero {
+    padding: 100px 2rem 40px 2rem; 
+  }
+
+  .concert-card {
+    gap: 30px;
+  }
+
+ 
 }
