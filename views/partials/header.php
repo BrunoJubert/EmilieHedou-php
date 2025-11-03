@@ -2,19 +2,51 @@
 <html lang="fr">
 
 <head>
+    <!-- Encodage et responsive -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Vérification Google -->
     <meta name="google-site-verification" content="6KDIzMITTOFk3S_eWxow6bPz9jhdJLaqJ0vqiZ6Dj7Y" />
-    <title>Emilie Hedou, Chanteuse Soul & Blues</title>
+
+    <!-- Titre SEO -->
+    <title>Emilie Hedou – Chanteuse Soul & Blues, Concerts et Projets Musicaux</title>
+
+    <!-- Meta description pour Google -->
+    <meta name="description" content="Site officiel d'Emilie Hedou – Chanteuse Soul & Blues, Concerts et Projets Musicaux">
+
+    <!-- Meta keywords (optionnel) -->
+    <meta name="keywords" content="Emilie Hedou, chanteuse, soul, blues, concerts, vidéos, musique, projets musicaux">
+
+    <!-- Canonical URL pour éviter le contenu dupliqué -->
+    <link rel="canonical" href="https://www.emiliehedou.fr/">
+
+    <!-- Open Graph pour Facebook / LinkedIn -->
+    <meta property="og:title" content="Emilie Hedou – Chanteuse Soul & Blues">
+    <meta property="og:description" content="Découvrez le site officiel d’Emilie Hedou : concerts, vidéos et projets musicaux.">
+    <meta property="og:image" content="https://www.emiliehedou.fr/public/assets/mimi1.jpg">
+    <meta property="og:url" content="https://www.emiliehedou.fr">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emilie Hedou – Chanteuse Soul & Blues">
+    <meta name="twitter:description" content="Découvrez le site officiel d’Emilie Hedou : concerts, vidéos et projets musicaux.">
+    <meta name="twitter:image" content="https://www.emiliehedou.fr/public/assets/mimi1.jpg">
+
+    <!-- Fonts & Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <script src="/public/js/coockieManager.js"></script>
     <link rel="stylesheet" href="/public/styles/styles.css" />
     <?php if (isset($page) && $page === 'concerts') : ?>
         <link rel="stylesheet" href="/public/styles/concert.css" />
     <?php endif; ?>
+
+    <!-- Script cookies -->
+    <script src="/public/js/coockieManager.js"></script>
 </head>
+
 
 <body>
     <header class="musician-header sidebar-closed" id="sidebar">
