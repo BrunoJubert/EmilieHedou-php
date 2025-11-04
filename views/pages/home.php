@@ -271,7 +271,7 @@ if (isset($_GET['login'])) {
 
     <section id="contact" class="contact-section hero section-appear">
         <h1>Contact</h1>
-        <form action="https://formspree.io/f/movevnek" method="POST">
+        <form action="https://formspree.io/f/xvgvjnzo" method="POST">
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required />
