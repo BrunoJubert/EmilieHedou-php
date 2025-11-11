@@ -252,11 +252,33 @@ if (isset($_GET['login'])) {
                     Les musiciens distillent un son aux saveurs Jamaïcaines qui n’est pas sans rappeler leurs glorieux ancêtres de 
                     <strong>Trojan Records</strong>, <strong>Studio One</strong> et de la <strong>Motown</strong>. <strong>"REVIVAL"</strong> 
                      quatrième album du combo est l'aboutissement de la recherche 
-                    d'un son unique, une nouveauté qui fait du bien aux oreilles et qui ne vous laissera pas indifférent !
+                    d'un son unique, une nouveauté qui fait du bien aux oreilles et qui ne vous laissera pas indifférent ! <br>
+                    Visitez leur site : <a href="https://smokinfuzz.wixsite.com/smokinfuzz" target="_blank" rel="noopener noreferrer">Smokin'Fuzz</a>
                 </p>
                 <div class="video-wrapper">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/cE9zUdq50Bc?si=-EqDzQE1pnLiiB15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
+            </div>
+            <div class="projet-video-bloc">
+                <h3>Rhythm Hand Blues : Projet Chansigné</h3>
+                <div>
+                    <img class="mimiprojet" src="/public/assets/rhythmhandblues.JPG" alt="Rhythm Hand Blues : Projet Chansigné">                
+                </div>
+                <p>
+                    Nouvelle création  blues, unique où la voix et le geste se rejoignent pour célébrer l’émancipation et le bien-être. 
+                    Ce nouveau projet réunit 3 musiciens : <strong>Nicolas Blampain</strong>  , <strong>Hervé Pouliquen</strong> et <strong>Jérémie Pontier</strong>, une chansigneuse sourde 
+                    <strong>Léa Bourdeau</strong> et une chanteuse entendante, moi même créant un spectacle inclusif et riche en émotions.
+                    À travers des compositions originales et des reprises de grandes figures féminines du blues, comme Hélène Reddy, 
+                    Annie Lennox, Aretha Franklin, Etta James, Tina Turner et bien d’autres. <br>
+                    Nous explorons les thématiques de la confiance en soi et de l’émancipation, dans un principe de bien vivre ensemble.
+                    Ce spectacle se veut un pont entre les cultures et les sensibilités, où la musique chantée ou signée finalement devient langage universel de liberté et d’égalité.
+                    Et en ce moment , les amis, ça fait du bien …. 
+                    Création et Co Prod : <a href="https://www.blues-sur-seine.com/">Blues sur Seine</a>  - <strong>Alice Grimaud</strong> (VO Music)
+                </p>
+                <p>
+                    Videos à venir bientôt !
+                </p>
+                <img src="/public/assets/mimilea.JPG" alt="Rhythm Hand Blues : Projet Chansigné">
             </div>
         </div>
     </details>   
