@@ -238,6 +238,26 @@ if (isset($_GET['login'])) {
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/9zGsdVfBu_k?si=F1tOcEVskbYW4j8K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
+            <div class="projet-video-bloc">
+                <h3>Smokin'Fuzz</h3>
+                <p>
+                    Leurs faits d’armes depuis 1999, 3 albums, un documentaire-fiction  sur France 5 et plus de 500 de concerts
+                    à travers l'Europe en compagnie de grands noms tels Laurel Aitken, New York Ska Jazz, The Skatalites, Jamaïcan all stars, 
+                    Earth Wind & Fire, LKJ, La Caravane Passe, Jim Murple Memorial, K2R Riddim, Babylon Circus, SVINKELS...jusqu'en 2014.
+                    Et depuis silence radio... le temps nécessaire pour mûrir et enregistrer un nouvel album pour leur 20 ans d'existence. 
+                    Mieux que le phœnix devenu leur emblème, le groupe renait plus fort que jamais porté par les voix soul d'
+                    <strong>Emilie Hedou</strong> et reggae de Nyko. <br>
+                    La formation a évolué au cours des années pour vous proposer aujourd’hui un mélange de Rocksteady et de Soul qu’eux 
+                    même appellent le <strong>« SOULSTEADY »</strong>   <br>
+                    Les musiciens distillent un son aux saveurs Jamaïcaines qui n’est pas sans rappeler leurs glorieux ancêtres de 
+                    <strong>Trojan Records</strong>, <strong>Studio One</strong> et de la <strong>Motown</strong>. <strong>"REVIVAL"</strong> 
+                     quatrième album du combo est l'aboutissement de la recherche 
+                    d'un son unique, une nouveauté qui fait du bien aux oreilles et qui ne vous laissera pas indifférent !
+                </p>
+                <div class="video-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cE9zUdq50Bc?si=-EqDzQE1pnLiiB15" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
     </details>   
 </section>
